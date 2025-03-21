@@ -1,7 +1,7 @@
 import { Agentica } from "@agentica/core";
-import typia from "typia";
 import dotenv from "dotenv";
 import { OpenAI } from "openai";
+import typia from "typia";
 
 import { GmailService } from "@wrtnlabs/connector-gmail";
 
@@ -20,7 +20,11 @@ export const agent = new Agentica({
       name: "Gmail Connector",
       protocol: "class",
       application: typia.llm.application<GmailService, "chatgpt">(),
-      execute: new GmailService(),
+      execute: new GmailService({
+        clientId: process.env.GOOGLE_CLIENT_ID!,
+        clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+        secret: process.env.GOOGLE_REFRESH_TOKEN!,
+      }),
     },
   ],
 });
