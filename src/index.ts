@@ -21,9 +21,9 @@ export const agent = new Agentica({
       protocol: "class",
       application: typia.llm.application<GmailService, "chatgpt">(),
       execute: new GmailService({
-        clientId: process.env.GOOGLE_CLIENT_ID!,
-        clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
-        secret: process.env.GOOGLE_REFRESH_TOKEN!,
+        clientId: process.env.GMAIL_CLIENT_ID!,
+        clientSecret: process.env.GMAIL_CLIENT_SECRET!,
+        secret: process.env.GMAIL_REFRESH_TOKEN!,
       }),
     },
   ],
