@@ -1,6 +1,6 @@
 # agentica-tutorial-gmail
 
-Search arxiv papers using agentica.
+send mail using agentica.
 
 Assign your OpenAI API key into the `.env.sample` file.
 
